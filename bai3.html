@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<h3>Chuyen doi chuoi</h3>
+<input id="chuoi" type="text" placeholder="Nhap vao chuoi">
+<button type="button" onclick="chu_hoa();">Chu Hoa</button>
+<button type="button" onclick="chu_thuong();">Chu Thuong</button>
+<button type="button" onclick="hoa_thuong();">ChuHoa_ChuThuong</button>
+<button type="button" onclick="nhap_lai();">Nhap Lai</button>
+<p id="result"></p>
+<body>
+<script>
+    var a=document.getElementById('chuoi');
+    var b=document.getElementById('result');
+    var UPPER='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var lower='abcdefghijklmnopqrstuvwxyz';
+    var Result=[];
+    function chu_hoa() {
+    for( let i=0;i<a.value.length;i++)
+    {
+        if (lower.indexOf(a.value[i])!==-1){
+            Result[Result.length]=a.value[i].toUpperCase()
+        }
+        else {
+            Result[Result.length]=a.value[i];
+        }
+    }
+        b.innerHTML=Result; "<br/>"
+}
+function chu_thuong() {
+    for( let i=0;i<a.value.length;i++)
+    {
+        if (UPPER.indexOf(a.value[i])!==-1){
+            Result[Result.length]=a.value[i].toLowerCase()
+        }
+        else {
+            Result[Result.length]=a.value[i];
+        }
+    }
+    b.innerHTML=Result; "<br/>"
+}
+function hoa_thuong() {
+    for( let i=0;i<a.value.length;i++)
+    {
+        if (lower.indexOf(a.value[i])!==-1){
+            Result[Result.length]=a.value[i].toUpperCase()
+        }
+        else if (UPPER.indexOf(a.value[i])!==-1){
+            Result[Result.length]=a.value[i].toLowerCase()
+        }
+        else {
+            Result[Result.length]=a.value[i];
+        }
+    }
+    b.innerHTML=Result; "<br/>"
+}
+function nhap_lai() {
+    a.value="";
+    b.innerHTML='';
+}
+
+</script>
+</body>
+</html>
